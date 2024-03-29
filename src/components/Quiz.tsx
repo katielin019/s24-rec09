@@ -1,27 +1,34 @@
 import React, { useState } from 'react'
 import './Quiz.css'
 import QuizQuestion from '../core/QuizQuestion';
+import QuizCore from '../core/QuizCore';
 
 interface QuizState {
-  questions: QuizQuestion[]
-  currentQuestionIndex: number
+  quiz: QuizCore
+  // questions: QuizQuestion[]
+  // currentQuestionIndex: number
   selectedAnswer: string | null
-  score: number
+  // score: number
+  // attempts: number
 }
 
 const Quiz: React.FC = () => {
-  const initialQuestions: QuizQuestion[] = [
-    {
-      question: 'What is the capital of France?',
-      options: ['London', 'Berlin', 'Paris', 'Madrid'],
-      correctAnswer: 'Paris',
-    },
-  ];
+  // const initialQuestions: QuizQuestion[] = [
+  //   {
+  //     question: 'What is the capital of France?',
+  //     options: ['London', 'Berlin', 'Paris', 'Madrid'],
+  //     correctAnswer: 'Paris',
+  //   },
+  // ];
+  const qCore: QuizCore = new QuizCore();
+
   const [state, setState] = useState<QuizState>({
-    questions: initialQuestions,
-    currentQuestionIndex: 0,  // Initialize the current question index.
+    quiz: qCore,
+    // questions: initialQuestions,
+    // currentQuestionIndex: 0,  // Initialize the current question index.
     selectedAnswer: null,  // Initialize the selected answer.
-    score: 0,  // Initialize the score.
+    // score: 0,  // Initialize the score.
+    // attempts: 0,  // Initialize the number of attempts.
   });
 
   const handleOptionSelect = (option: string): void => {
@@ -31,16 +38,20 @@ const Quiz: React.FC = () => {
 
   const handleButtonClick = (): void => {
     // Task3: Implement the logic for button click, such as moving to the next question.
+    if (state.selectedAnswer !== null) {
+      state.quiz.answerQuestion(state.selectedAnswer);
+      quiz.nextQuestion();
+    }
   } 
 
-  const { questions, currentQuestionIndex, selectedAnswer, score } = state;
-  const currentQuestion = questions[currentQuestionIndex];
+  const { quiz, selectedAnswer } = state;
+  const currentQuestion = quiz.getCurrentQuestion();// questions[currentQuestionIndex];
 
-  if (!currentQuestion) {
+  if (currentQuestion === null) {
     return (
       <div>
         <h2>Quiz Completed</h2>
-        <p>Final Score: {score} out of {questions.length}</p>
+        <p>Final Score: {quiz.getScore()} out of {quiz.getTotalQuestions()}</p>
       </div>
     );
   }
