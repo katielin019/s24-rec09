@@ -78,6 +78,10 @@ const Quiz: React.FC = () => {
       <p>{selectedAnswer ?? 'No answer selected'}</p>
 
       <button onClick={handleButtonClick}>Next Question</button>
+      <div>
+        <h4>Current Score</h4>
+        <p>{quiz.getScore()}</p>
+      </div>
     </div>
   );
 };
