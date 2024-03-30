@@ -64,10 +64,7 @@ const Quiz: React.FC = () => {
           </li>
         ))}
       </ul>
-
-      <h3>Selected Answer:</h3>
-      <p>{selectedAnswer ?? 'No answer selected'}</p>
-
+      <br />
       <button onClick={ () => handleButtonClick()}>Next Question</button>
     </div>
   );
