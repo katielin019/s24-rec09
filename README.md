@@ -3,9 +3,9 @@
 React is a declarative, efficient, and flexible JavaScript library for building interactive and dynamic user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.In this lab, students will learn the fundamentals of React.js and create an interactive quiz application.
 
 ## Deliverables
-- [ ] Modify the implementation to separate the core and GUI components.
-- [ ] Enhance the user interface to indicate the selected answer, providing a more visually appealing user experience
-- [ ] Extend the Quiz component to make the "Next Question" button functional. It should move to the next question and display the total score when all questions have been answered.
+- [x] Modify the implementation to separate the core and GUI components.
+- [x] Enhance the user interface to indicate the selected answer, providing a more visually appealing user experience
+- [x] Extend the Quiz component to make the "Next Question" button functional. It should move to the next question and display the total score when all questions have been answered.
 
 ## Instructions
 Clone the Quiz App repository from: https://github.com/CMU-17-214/s24-rec09 and run
