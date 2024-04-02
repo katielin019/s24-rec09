@@ -7,6 +7,7 @@ interface QuizState {
   quiz: QuizCore
   currentQuestion: QuizQuestion | null
   selectedAnswer: string | null
+  hasNextQuestion: boolean
 }
 
 const Quiz: React.FC = () => {
@@ -16,6 +17,7 @@ const Quiz: React.FC = () => {
     quiz: qCore,
     currentQuestion: qCore.getCurrentQuestion(),
     selectedAnswer: null,
+    hasNextQuestion: qCore.hasNextQuestion(),
   });
 
   const handleOptionSelect = (option: string): void => {
@@ -32,6 +34,7 @@ const Quiz: React.FC = () => {
         ...prevState,
         selectedAnswer: null,
         currentQuestion: state.quiz.getCurrentQuestion(),
+        hasNextQuestion: state.quiz.hasNextQuestion(),
       }));
     }
   } 
@@ -65,11 +68,9 @@ const Quiz: React.FC = () => {
         ))}
       </ul>
       <br />
-      if (state.hasNextQuestion()) {
-        <button onClick={ () => handleButtonClick()}>Next Question</button>
-      } else {
-        <button onClick={ () => handleButtonClick()}>Submit Quiz</button>
-      }
+      {state.hasNextQuestion ? 
+        (<button onClick={ () => handleButtonClick()}>Next Question</button>) :
+        (<button onClick={ () => handleButtonClick()}>Submit Quiz</button>)}
     </div>
   );
 };
