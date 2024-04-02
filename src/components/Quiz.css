@@ -1,11 +1,16 @@
 /* Task 2: 
 Enhance User Experience by adding visual highlights to selected answers
 Hint: You can use the className attribute for highlighting*/
+
 .selected {
   cursor: pointer;
-  background-color: #64c1ff; /* Change background color on hover for interactivity */
-  /* color: white; */
-  font-weight: bold;
+  background-color: #98d6ff; /* Change background color on select for interactivity */
+  /* border-color: white; */
+  border-color: #3498db; /* Change border color on select for interactivity */
+}
+
+.selected:hover {
+  background-color: #98d6ff; /* Change background color on hover for interactivity */
 }
 
 /* Container styles */
@@ -61,6 +66,10 @@ button {
 
 button:hover {
   background-color: #1f77c5;
+}
+
+li:hover {
+  background-color: #f0f0f0;
 }
 
 /* Score styles */
