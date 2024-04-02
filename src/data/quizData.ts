@@ -7,7 +7,7 @@ const quizData: QuizQuestion[] = [
     correctAnswer: "Composite",
   },
   {
-    question: "What add behavior to an individual object, dynamically, without affecting the behavior of other objects from the same class?",
+    question: "What adds behavior to an individual object, dynamically, without affecting the behavior of other objects from the same class?",
     options: ["Adapter", "Decorator", "Facade", "Strategy"],
     correctAnswer: "Decorator",
   },
@@ -21,6 +21,21 @@ const quizData: QuizQuestion[] = [
     options: ["Strategy", "Adapter", "Composite", "Iterator"],
     correctAnswer: "Iterator",
   },
+  {
+    question: "Which two teams faced off in the 2022 World Cup final?",
+    options: ["Brazil and Germany", "France and Croatia", "Argentina and France"],
+    correctAnswer: "Argentina and France",
+  },
+  {
+    question: "Who was the only US President to serve more than two terms?",
+    options: ["Calvin Coolidge", "Franklin D. Roosevelt", "Theodore Roosevelt", "Abraham Lincoln"],
+    correctAnswer: "Franklin D. Roosevelt",
+  },
+  {
+    question: "Which country has the longest coastline in the world?",
+    options: ["Canada", "Australia", "Indonesia", "Norway"],
+    correctAnswer: "Canada",
+  }
 ];
 
 export default quizData;
