@@ -33,7 +33,7 @@ The starter code directly displays the user's current selection. Your task is to
 
 > Hint: You can consider using CSS to change the background color or apply a border to the selected option
 
-![Local Image](https://github.com/katielin019/s24-rec09/tree/main/src/image/final-hover.png)
+![Local Image](https://github.com/katielin019/s24-rec09/blob/main/src/image/final-hover.png)
 
 ![Local Image](https://github.com/katielin019/s24-rec09/blob/main/src/image/final-selected.png)
 
