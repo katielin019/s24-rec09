@@ -65,7 +65,11 @@ const Quiz: React.FC = () => {
         ))}
       </ul>
       <br />
-      <button onClick={ () => handleButtonClick()}>Next Question</button>
+      if (state.hasNextQuestion()) {
+        <button onClick={ () => handleButtonClick()}>Next Question</button>
+      } else {
+        <button onClick={ () => handleButtonClick()}>Submit Quiz</button>
+      }
     </div>
   );
 };
